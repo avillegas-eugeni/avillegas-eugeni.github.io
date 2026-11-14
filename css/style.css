@@ -121,14 +121,6 @@ main section:target {
     gap: 2rem;
 }
 
-body:not(:has(:target)) header nav a[href="#home"]::after,
-body:has(:target(#home)) header nav a[href="#home"]::after,
-body:has(:target(#aboutme)) header nav a[href="#aboutme"]::after,
-body:has(:target(#projects)) header nav a[href="#projects"]::after,
-body:has(:target(#contact)) header nav a[href="#contact"]::after {
-    transform: scaleX(1);
-}
-
 main section a {
     text-decoration: none;
 }
