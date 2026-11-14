@@ -16,9 +16,24 @@ body {
     margin: 0;
     padding: 3rem 5rem;
     font-family: Montserrat, sans-serif;
-    background-image: url(/imatges/background.jpeg);
+    background-image: url(/imatges/home-background.jpeg);
     background-size: cover;
     color: var(--color-texts);
+    transition: background-image 0.3s ease-in;
+    animation: backgroundImageSlide 0.3s ease-in forwards;
+}
+
+body:has(#home:target) {
+    background-image: url(/imatges/home-background.jpeg);
+}
+body:has(#aboutme:target) {
+    background-image: url(/imatges/aboutme-background.jpeg);
+}
+body:has(#projects:target) {
+    background-image: url(/imatges/projects-background.jpeg);
+}
+body:has(#contact:target) {
+    background-image: url(/imatges/contact-background.jpeg);
 }
 
 header {
@@ -26,6 +41,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 3rem;
+    animation: fadeIn 0.7s ease-out forwards;
 }
 
 header img {
@@ -68,8 +84,16 @@ header nav ul li a::after {
     transition: transform 0.3s ease-out;
 }
 
-header nav ul li a:hover::after,
-header nav ul li a.active::after {
+header nav ul li a:hover::after {    
+    margin-bottom: -1.2rem;
+    transform: scaleX(1);
+}
+
+body:not(:has(:target)) header nav ul li a[href="#home"]::after,
+body:has(#home:target) header nav ul li a[href="#home"]::after,
+body:has(#aboutme:target) header nav ul li a[href="#aboutme"]::after,
+body:has(#projects:target) header nav ul li a[href="#projects"]::after,
+body:has(#contact:target) header nav ul li a[href="#contact"]::after {
     margin-bottom: -1.2rem;
     transform: scaleX(1);
 }
@@ -98,6 +122,7 @@ main section:target {
 }
 
 body:not(:has(:target)) header nav a[href="#home"]::after,
+body:has(:target(#home)) header nav a[href="#home"]::after,
 body:has(:target(#aboutme)) header nav a[href="#aboutme"]::after,
 body:has(:target(#projects)) header nav a[href="#projects"]::after,
 body:has(:target(#contact)) header nav a[href="#contact"]::after {
@@ -114,6 +139,7 @@ main section .intro-text {
     gap: 20px;
     font-size: 1rem;
     letter-spacing: 0.25em;
+    animation: fadeInScale 0.7s ease-out forwards;
 }
 
 main section .intro-text::after {
@@ -128,16 +154,19 @@ main section .nom {
     font-size: 8rem;
     font-weight: 600;
     letter-spacing: -0.25rem;
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
 main section span {
     color: var(--color-span);
+    animation: fadeInUp 1s ease-out forwards;
 }
 
 main section .description {
     max-width: 60%;
     font-family:Arial, Helvetica, sans-serif;
     font-size: 1.5rem;
+    animation: fadeInLeft 0.7s ease-out forwards;
 }
 
 .portfolio-button {
@@ -177,7 +206,7 @@ footer .social::after{
     width: 100%;
     height: 2px;
     content: "";
-    background: linear-gradient(90deg, #e5ccb1 0%, transparent 100%);;
+    background: var(--linear-gradients);
 }
 
 footer .social svg {
