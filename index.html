@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animations.css">
-    <link rel="shortcut icon" href="imatges/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="stylesheet" href="https://googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 
@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <img alt="logo" src="imatges/logo.png">
+        <img alt="logo" src="css/logo.png">
         <nav>
             <ul>
                 <li><a class="active" href="#home">Inici</a></li>
@@ -40,7 +40,22 @@
             <p></p>
         </section>
         <section id="contact">
-            <p></p>
+            <form action="#thanks" method="get">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Missatge</label>
+                <textarea id="message" name="message" required></textarea>
+                <div class="checkbox-line">
+                    <input type="checkbox" name="checkbox" required>
+                    <p>He llegit i accepto la <b>Política de Privacitat</b> i consenteixo el tractament de les meves dades personals per gestionar la meva consulta.</p>
+                </div>
+                <div class="buttons-line">
+                    <button type="reset">Netejar</button>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
         </section>
     </main>
     <footer>
