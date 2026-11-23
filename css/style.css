@@ -215,9 +215,14 @@ main section .description {
 
 
 /* ESTILS CONTACTE */
+#contact:target {
+    display: flex;
+    flex-direction: row;
+}
 form {
     display: flex;
     flex-direction: column;
+    max-width: 50vh;
 }
 
 .buttons-line {
