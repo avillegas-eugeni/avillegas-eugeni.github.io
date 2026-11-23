@@ -272,6 +272,7 @@ footer .social::after{
 footer .social svg {
     width: 2.5rem;
     margin-right: 1.4rem;
+    cursor: pointer;
 }
 
 footer .social svg:hover {
