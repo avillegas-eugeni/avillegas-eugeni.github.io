@@ -2,6 +2,7 @@
     --background-color: #0F0E0D;
     --color-span: #DCC5AC;
     --color-border: #dcc5ac9c;
+    --color-border-blur: #dcc5ac3d;
     --color-buttons: #DCC5AC;
     --color-buttons-text: #0F0E0D;
     --color-icons: #F8F8F8;
@@ -219,6 +220,7 @@ main section .description {
 #contact:target {
     display: flex;
     flex-direction: row;
+    gap: 5%;
 }
 
 main section #contact:target {
@@ -243,7 +245,7 @@ section .left {
     flex-direction: column;
     align-items: flex-start;
     background-color: rgba(42, 42, 42, 0.4);
-    border: 1px solid var(--color-border);
+    border: 1px solid var(--color-border-blur);
     border-radius: 1rem;
 }
 
@@ -321,6 +323,11 @@ input[type="checkbox"] {
     flex: 0;
 }
 
+.checkbox-line p {
+    align-content: center;
+    margin: 0;
+}
+
 .buttons-line {
     display: flex;
     justify-content: center;
@@ -332,7 +339,7 @@ button {
     background-color: var(--color-buttons);
     border: none;
     border-radius: 3rem;
-    padding: 0.5rem calc(18%);
+    padding: 0 calc(18%);
     font-family: var(--font-family-button);
     font-size: var(--font-size-button);
     font-weight: var(--font-weight-button);
