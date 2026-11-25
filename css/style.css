@@ -171,9 +171,9 @@ main section span {
 }
 
 main section .description {
-    max-width: 60%;
+    max-width: 80%;
     font-family:Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     animation: fadeInLeft 0.7s ease-out forwards;
 }
 
@@ -224,7 +224,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     max-width: 60vh;
-    background-color: rgba(128, 128, 128, 0.445);
+    background-color: rgba(0, 0, 0, 0.445);
     border-radius: 2rem;
     border: 1px solid var(--color-buttons);
     padding: 2rem;
@@ -246,7 +246,7 @@ form h2 {
 form h2::after {
     content: "";
     display: block;
-    width: 50px;
+    width: 200px;
     height: 2px;
     background: var(--linear-gradients);
     margin-top: 0.5rem;
@@ -256,14 +256,18 @@ form input, form textarea {
     flex: 1 1 calc(50% - 0.5rem);
     border: 1px solid var(--color-buttons);
     border-radius: 0.5rem;
-    background-color: rgba(128, 128, 128, 0.2);
-    color: var(--color-buttons);
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
     padding: 1rem;
+}
+
+form input::placeholder, form textarea::placeholder {
+    color: beige;
 }
 
 form textarea {
     line-height: 1.5;
-    min-height: calc(1.5em * 4);
+    min-height: calc(1.5em * 3);
 }
 
 input[type="checkbox"] {
@@ -275,7 +279,7 @@ input[type="checkbox"] {
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 1rem;
+    gap: 4rem;
 }
 
 button {
