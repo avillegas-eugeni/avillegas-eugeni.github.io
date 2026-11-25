@@ -221,6 +221,14 @@ main section .description {
     flex-direction: row;
 }
 
+main section #contact:target {
+    display: flex;
+}
+
+section .left {
+    flex: 1;
+} 
+
 .contact-cards {
     display: flex;
     flex-direction: column;
@@ -265,6 +273,7 @@ form {
     border-radius: 2rem;
     border: 1px solid var(--color-border);
     padding: 2rem;
+    margin: 0 1rem;
     gap: 1rem;
 }
 
