@@ -1,12 +1,13 @@
 :root {
     --background-color: #0F0E0D;
+    --background-transparent: rgba(15, 14, 13, 0.4);
     --color-span: #DCC5AC;
     --color-border: #dcc5ac9c;
     --color-border-blur: #dcc5ac3d;
     --color-buttons: #DCC5AC;
     --color-buttons-text: #0F0E0D;
-    --color-icons: #F8F8F8;
-    --color-texts: #F8F8F8;
+    --color-text-base: #F8F8F8;
+    --color-text-base: #F8F8F8;
     --linear-gradients: linear-gradient(90deg, #e5ccb1 0%, transparent 100%);
     --font-family-button: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     --font-size-button: 1.2rem;
@@ -27,7 +28,7 @@ body {
     background-color: var(--background-color);
     background-image: url(home-background.jpeg);
     background-size: cover;
-    color: var(--color-texts);
+    color: var(--color-text-base);
     transition: background-image 0.3s ease-in;
     animation: backgroundImageSlide 0.3s ease-in forwards;
 }
@@ -79,7 +80,7 @@ header nav ul li a {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    color: var(--color-texts);
+    color: var(--color-text-base);
     text-decoration: none;
 }
 
@@ -87,7 +88,7 @@ header nav ul li a::after {
     width: calc(100% + 2rem);
     height: 2px;
     content: "";
-    background-color: var(--color-texts);
+    background-color: var(--color-text-base);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.3s ease-out;
@@ -242,11 +243,22 @@ section .left {
 
 .contact {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: rgba(42, 42, 42, 0.4);
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--background-transparent);
     border: 1px solid var(--color-border-blur);
     border-radius: 1rem;
+    gap: 1rem;
+}
+
+.contact svg {
+    color: var(--color-span);
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: 1rem;
 }
 
 dl {
@@ -259,19 +271,23 @@ dl .contact {
     padding: 1rem 1.25rem;
 }
 
+dt {
+    color: var(--color-text-base);
+}
+
 dd {
     margin: 0;
 }
 
 dd a {
-    color: beige;
+    color: var(--color-span);
 }
 
 form {
     display: flex;
     flex-wrap: wrap;
     max-width: 60vh;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: var(--background-transparent);
     border-radius: 2rem;
     border: 1px solid var(--color-border);
     padding: 2rem;
@@ -301,16 +317,16 @@ form h2::after {
 }
 
 form input, form textarea {
-    flex: 1 1 calc(50% - 0.5rem);
+    flex: 1 1 0;
     border: 1px solid var(--color-border);
     border-radius: 1rem;
-    background-color: rgba(42, 42, 42, 0.4);
-    color: white;
+    background-color: var(--background-transparent);
+    color: var(--color-text-base);
     padding: 0.6rem 1rem;
 }
 
 form input::placeholder, form textarea::placeholder {
-    color: beige;
+    color: var(--color-span);
 }
 
 form textarea {
@@ -327,6 +343,25 @@ input[type="checkbox"] {
     align-content: center;
     margin: 0;
 }
+
+/* El estilo solo se activa cuando el usuario interactúa y el dato es incorrecto */
+input:user-invalid {
+  border: 2px solid #ff4d4d;
+  background-color: #ffe6e6;
+}
+
+/* Ocultar el mensaje de error por defecto */
+.error-msg {
+  display: none;
+  color: #ff4d4d;
+  font-size: 0.9rem;
+}
+
+/* Mostrar el mensaje de error adjunto solo cuando el input sea inválido por el usuario */
+input:user-invalid + .error-msg {
+  display: block;
+}
+
 
 .buttons-line {
     display: flex;
@@ -363,7 +398,7 @@ footer {
     display: flex;
     margin-bottom: 0;
     padding-top: 3rem;
-    color: var(--color-icons);
+    color: var(--color-text-base);
 }
 
 footer .social {

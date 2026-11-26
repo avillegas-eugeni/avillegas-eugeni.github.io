@@ -48,16 +48,36 @@
                 <div class="contact-cards">
                     <dl>
                         <div class="contact">
-                            <dt>Correu electrónic</dt>
-                            <dd><a href="mailto:avillegas@ies-eugeni.cat">avillegas@ies-eugeni.cat</a></dd>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect width="20" height="16" x="2" y="4" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                            <div class="contact-info">
+                                <dt>Correu electrónic</dt>
+                                <dd><a href="mailto:avillegas@ies-eugeni.cat">avillegas@ies-eugeni.cat</a></dd>
+                            </div>
                         </div>
                         <div class="contact">
-                            <dt>Telèfon</dt>
-                            <dd><a href="tel:612345678">+34612345678</a></dd>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.2 1.43.5 2.84.88 4.21a2 2 0 0 1-.45 2.11L8.09 11.91a16 16 0 0 0 6 6l1.87-1.87a2 2 0 0 1 2.11-.45c1.37.38 2.78.68 4.21.88a2 2 0 0 1 1.72 2z" />
+                            </svg>
+                            <div class="contact-info">
+                                <dt>Telèfon</dt>
+                                <dd><a href="tel:+34612345678">+34 612 34 56 78</a></dd>
+                            </div>
                         </div>
                         <div class="contact">
-                            <dt>Ubicació</dt>
-                            <dd><span>Barcelona</span>,<span>Espanya</span></dd>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                            <div class="contact-info">
+                                <dt>Ubicació</dt>
+                                <dd><span>Barcelona</span>,<span>Espanya</span></dd>
+                            </div>
                         </div>
                     </dl>
                 </div>
@@ -65,11 +85,19 @@
             <form action="#thanks" method="get">
                 <h2>Envia'm un missatge</h2>
                 <div class="input-line">
-                    <input type="text" id="name" name="name" placeholder="Nom *" required>
-                    <input type="email" id="email" name="email" placeholder="Email *" required>
+                    <div class="input-field">
+                        <input type="text" id="name" name="name" placeholder="Nom *" required>
+                        <span class="error-msg">Introdueix el teu nom.</span>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" id="email" name="email" placeholder="Email *" required>
+                        <span class="error-msg">Introdueix un correu vàlid.</span>
+                    </div>
                 </div>
 
                 <textarea id="message" name="message" placeholder="Missatge *" required></textarea>
+                <span class="error-msg">Introdueix un missatge per poder enviar.</span>
+
                 <div class="checkbox-line">
                     <input type="checkbox" name="checkbox" required>
                     <p>He llegit i accepto la <b>Política de Privacitat</b> i consenteixo el tractament de les meves
